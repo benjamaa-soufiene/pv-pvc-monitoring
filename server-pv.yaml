@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: server-pv
+  namespace: monitoring 
+  labels:
+    type: local
+spec:
+  storageClassName: server
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+     path: "/data/prometheus/server"
